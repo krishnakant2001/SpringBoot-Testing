@@ -7,6 +7,7 @@ import org.junit.jupiter.api.*;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @SpringBootTest
 @Slf4j
@@ -69,11 +70,14 @@ class TestingAppApplicationTests {
 
 	}
 	@Test
-	void testTwoNumbers(){
+	void testDivideTwoNumbers_whenDenominotorIsZero_ThenArithmeticException(){
 		int a = 5;
 		int b = 0;
 
-		double result = divideTwoNumbers(a, b);
+		assertThatThrownBy(() -> divideTwoNumbers(a, b))
+				.isInstanceOf(ArithmeticException.class);
+
+//		double result = divideTwoNumbers(a, b);
 	}
 
 	int addingTwoNumbers(int a, int b){
