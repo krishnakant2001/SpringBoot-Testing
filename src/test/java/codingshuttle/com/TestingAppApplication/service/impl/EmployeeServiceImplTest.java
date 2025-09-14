@@ -5,7 +5,6 @@ import codingshuttle.com.TestingAppApplication.dto.EmployeeDto;
 import codingshuttle.com.TestingAppApplication.entities.Employee;
 import codingshuttle.com.TestingAppApplication.exceptions.ResourceNotFoundException;
 import codingshuttle.com.TestingAppApplication.repositories.EmployeeRepository;
-import codingshuttle.com.TestingAppApplication.service.EmployeeService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,7 +14,6 @@ import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.context.annotation.Import;
 
@@ -23,7 +21,6 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @Import(TestContainerConfiguration.class)
